@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7mv1qnislc7h" path="res://anime_girl_PNG37.png" id="2_ghijl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_186t8"]
-size = Vector2(20, 40)
+size = Vector2(100, 200)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=683529084]
 script = ExtResource("1_ij6vw")
@@ -13,6 +13,5 @@ script = ExtResource("1_ij6vw")
 shape = SubResource("RectangleShape2D_186t8")
 
 [node name="AnimeGirlPng37" type="Sprite2D" parent="CollisionShape2D" unique_id=1163952722]
-position = Vector2(4.529953e-06, 2.026558e-06)
-scale = Vector2(0.028571416, 0.041928727)
+scale = Vector2(0.14285715, 0.2096436)
 texture = ExtResource("2_ghijl")
