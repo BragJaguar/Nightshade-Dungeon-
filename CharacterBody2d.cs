@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class CharacterBody2d : CharacterBody2D
@@ -8,16 +9,22 @@ public partial class CharacterBody2d : CharacterBody2D
 	//State machine: 0=ground, 1=air,
 	public int State;
 	
+	private double CoyoteTime;
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 		if (State == 0)
 		{
-			MoveHorizontal(1.0f,256.0f);
+			MoveHorizontal(1.0f,128.0f);
 			GroundedJump();
+			
+			if (!IsOnFloor()) { CoyoteTime += delta; if (CoyoteTime >= 0.2) { State = 1; } } else { CoyoteTime = 0; }
 		}else if (State == 1)
 		{
-			MoveHorizontal(0.2f,64.0f);
+			MoveHorizontal(0.2f,8.0f);
+			
+			if (IsOnFloor()){State = 0;}
 		}
 		
 		// Add the gravity.

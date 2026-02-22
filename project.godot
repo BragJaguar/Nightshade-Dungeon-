@@ -69,4 +69,4 @@ ui_down={
 
 [physics]
 
-2d/default_gravity=832.0
+2d/default_gravity=1024.0
